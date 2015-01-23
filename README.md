@@ -9,12 +9,10 @@ A generic handler for pooling game objects in unity
 ## How to use:
 
 This is an examplescript of how to use the pooler.
-
-to instantiate a new game object use GameObjectPooler.Instance.GetObject(LargeCloud);
-
+to instantiate a new game object use __GameObjectPooler.Instance.GetObject(LargeCloud);__
 then set its position and rotation. After that set the game object to active.
-
 When you don't need the object set it to inactive with this code:
+
 largeCloud.SetActive(false);
 
 ```csharp

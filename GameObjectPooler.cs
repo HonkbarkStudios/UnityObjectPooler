@@ -11,8 +11,14 @@ public class GameObjectPooler : MonoBehaviour {
 		this.ObjectPool = new Dictionary<string, List<GameObject>>();
 	}
 
+	public void PreloadGameObject(GameObject prefab) {
+		var nameOfPrefab = this.GetPrefabName(prefab);
+		var gameObject = this.InstatiateNewGameObject(prefab);
+		this.AddToObjectPool(gameObject, nameOfPrefab);
+	}
+
 	public GameObject GetObject(GameObject prefab) {
-		var nameOfPrefab = prefab.name.Replace("(Clone)", "");
+		var nameOfPrefab = this.GetPrefabName(prefab);
 		GameObject gameObject;
 		if(this.ObjectPool.ContainsKey(nameOfPrefab) && this.HasInactiveGameObject(nameOfPrefab)) {
 			gameObject = this.GetInactiveGameObject(nameOfPrefab);
@@ -22,6 +28,11 @@ public class GameObjectPooler : MonoBehaviour {
 			this.AddToObjectPool(gameObject, nameOfPrefab);
 		}
 		return gameObject;
+	}
+
+	private string GetPrefabName(GameObject prefab) {
+		var nameOfPrefab = prefab.name.Replace("(Clone)", "");
+		return nameOfPrefab;
 	}
 
 	private bool HasInactiveGameObject(string nameOfPrefab) {

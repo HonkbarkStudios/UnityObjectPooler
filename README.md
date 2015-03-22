@@ -39,3 +39,31 @@ public class EnvironmentSpawner : MonoBehaviour {
 	}
 }
 ```
+
+###Preloading objects
+To load one or more objects into the object pool before using __GameObjectPooler.Instance.GetObject(LargeCloud);__ use the method __PreloadGameObject(Gameobject Prefab);__
+Do this when starting the game instead of when playing and you will avoid drops in performance because of instantiating new gameobjects
+
+```csharp
+using UnityEngine;
+using System.Collections;
+
+public class EnvironmentSpawner : MonoBehaviour {
+
+	public GameObject LargeCloud;
+
+	void Start () {
+		this.PreloadGameObjectsIntoPool();
+	}
+
+	private void PreloadGameObjectsIntoPool() {
+		this.AddFiveCopiesOfGameObjectToPool(LargeCloud);
+	}
+
+	private void AddFiveCopiesOfGameObjectToPool(GameObject gameObject) {
+		for(int i = 0; i < 5; i++) {
+			GameObjectPooler.Instance.PreloadGameObject(gameObject);
+		}
+	}
+}
+```

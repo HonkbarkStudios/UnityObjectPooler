@@ -1,5 +1,7 @@
 # UnityObjectPooler
-A generic handler for pooling game objects in unity
+A generic handler for pooling game objects in unity    
+Support this open source repo by using flattr
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=ChristianEngvall&url=https://github.com/crilleengvall/UnityObjectPooler&title=UnityObjectPooler&language=&tags=github&category=software)   
 
 ## Adding to your project:
 1. Download GameObjectPooler.

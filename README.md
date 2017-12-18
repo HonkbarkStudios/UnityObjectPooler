@@ -1,7 +1,5 @@
 # UnityObjectPooler
 A generic handler for pooling game objects in unity    
-Support this open source repo by using flattr
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=ChristianEngvall&url=https://github.com/crilleengvall/UnityObjectPooler&title=UnityObjectPooler&language=&tags=github&category=software)   
 
 ## Friendsheep
 This ObjectPooler is used in production in the game [Friendsheep](http://www.friendsheepgame.com "Friendsheep") 
@@ -45,7 +43,7 @@ public class EnvironmentSpawner : MonoBehaviour {
 }
 ```
 
-###Preloading objects
+### Preloading objects
 To load one or more objects into the object pool before using __GameObjectPooler.Instance.GetObject(LargeCloud);__ use the method __PreloadGameObject(Gameobject Prefab);__
 Do this when starting the game instead of when playing and you will avoid drops in performance because of instantiating new gameobjects
 
